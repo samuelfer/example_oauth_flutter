@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.carteira_funcional_oauth.CallbackActivity"
+            android:name="com.example.flutter_web_auth.CallbackActivity"
             android:exported="true">
             <intent-filter android:label="flutter_web_auth">
                 <action android:name="android.intent.action.VIEW" />
