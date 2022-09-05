@@ -15,21 +15,25 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // authenticate();
   }
 
   void authenticate() async {
     print('Chegando no authenticate ...');
-    final url =
-        Uri.https('login-teste-rkb7ne92.tcepb.tc.br', '/oauth/authorize', {
+
+    //Ambiente local
+    final url = Uri.http('192.168.100.112:9999', 'oauth/authorize', {
       'response_type': 'code',
-      'client_id': 'sisrhAppCracha',
-      'redirect_uri': 'carteirafuncional:/oauth2',
+      'client_id': 'appCarteiraFuncional',
+      'redirect_uri': 'carteirafuncional://oauth'
     });
 
     try {
       final result = await FlutterWebAuth.authenticate(
           url: url.toString(), callbackUrlScheme: "carteirafuncional");
+
+      print(result);
+      final code = Uri.parse(result).queryParameters['code'];
+
       setState(() {
         _status = 'Got result: $result';
       });

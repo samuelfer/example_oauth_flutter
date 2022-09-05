@@ -16,18 +16,19 @@
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
             <meta-data
-              android:name="io.flutter.embedding.android.NormalTheme"
-              android:resource="@style/NormalTheme"
+              android:name="io.flutter.embedding.android.SplashScreenUntilFirstFrame"
+              android:value="true"
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.example.flutter_web_auth.CallbackActivity"
+            android:name="com.linusu.flutter_web_auth.CallbackActivity"
             android:exported="true">
-            <intent-filter android:label="flutter_web_auth">
+            <intent-filter android:label="carteira_funcional_oauth">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
