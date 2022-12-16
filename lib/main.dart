@@ -21,15 +21,15 @@ class _MyAppState extends State<MyApp> {
     print('Chegando no authenticate ...');
 
     //Ambiente local
-    final url = Uri.http('192.168.100.112:9999', 'oauth/authorize', {
+    final url = Uri.http('url', 'oauth/authorize', {
       'response_type': 'code',
-      'client_id': 'appCarteiraFuncional',
-      'redirect_uri': 'carteirafuncional://oauth'
+      'client_id': 'appExemplo',
+      'redirect_uri': 'exemplo://oauth'
     });
 
     try {
       final result = await FlutterWebAuth.authenticate(
-          url: url.toString(), callbackUrlScheme: "carteirafuncional");
+          url: url.toString(), callbackUrlScheme: "exemplo");
 
       print(result);
       final code = Uri.parse(result).queryParameters['code'];
@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Carteira Funcional'),
+          title: const Text('App exemplo'),
         ),
         body: Center(
           child: Column(
